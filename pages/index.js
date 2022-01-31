@@ -114,7 +114,12 @@ export default function PaginaInicial() {
                                 borderRadius: '50%',
                                 marginBottom: '16px',
                             }}
-                            src={`https://github.com/${username}.png`}
+                            src={username
+                                ?
+                                (`https://github.com/${username}.png`)
+                                :
+                                ('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png')
+                            }
                         />
                         <Text
                             variant="body4"
@@ -124,8 +129,10 @@ export default function PaginaInicial() {
                                 padding: '3px 10px',
                                 borderRadius: '1000px'
                             }}
-                        >
-                            {username}
+                        >{
+                                 username  ? ( username ) : (`Undefined`)
+                        }
+                            
                         </Text>
                     </Box>
                 </Box>
